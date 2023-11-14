@@ -1,0 +1,149 @@
+@media screen and (min-width: 600px) {
+    .header__logo{
+        display: flex;
+    }
+    .visor__content{
+        display: flex;
+        width: 50%;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .visor__title{
+        color: #ffffff;
+        text-align: center;
+        padding: 30px 0px 0px;
+    }
+    .visor__text{
+        display: none;
+    }
+    .visor__btn{
+        background-color: #0eb582;
+        color: #ffffff;
+        border: 1px solid #0eb582;
+        border-radius: 5px;
+        width: 180px;
+        padding: 10px 0px;
+        transition: all 1s ease;
+    }
+    .visor__btn:hover{
+        letter-spacing: 3px;
+        transform: scaleX(1.1);
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .visor__text{
+        display: flex;
+        color: #ffffff;
+    }
+    .footer-container{
+        display: flex;
+        width: 100%;
+        justify-content: center;
+    }
+    ul h3:nth-child(1){
+        color: #0eb582;
+        border-bottom: 1px solid #0eb582;
+        font-style: italic;
+    }
+    ul p:nth-child(2){
+        font-style: italic;
+        color: #777;
+    }
+    .footer__social-container{
+        text-align: center;
+    }
+    .footer__social{
+        font-size: 2rem;
+        color: #0eb582;
+        text-decoration: none;
+    }
+    .column__item{
+        list-style-type: none;
+        padding: 4px 0px;
+    }
+    .column__link{
+        text-decoration: none;
+        color: #777;
+    }
+    .footer__input{
+        background-color: #ffffff;
+        border: 1px solid #0eb582;
+        outline: none;
+        border-radius: 3px;
+    }
+    .footer__input::placeholder{
+        color: #0eb582;
+        font-style: italic;
+    }
+    .footer__btn{
+        background-color: #0eb582;
+        border: 1px solid #0eb582;
+        color: #ffffff;
+        padding: 0px 25px;
+        border-radius: 3px;
+    }
+
+}
+
+@media screen and (min-width: 1024px) {
+    .visor__btn{
+        background-color: #0eb582;
+        color: #ffffff;
+        border: 1px solid #0eb582;
+        border-radius: 5px;
+        width: 160px;
+        padding: 5px 0px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .container{
+        grid-template-columns: 1fr 200px;
+        grid-template-areas: 
+                            "visor header"
+                            "contenidos contenidos"
+                            "cursos cursos"
+                            "footer footer";
+    }
+    .header{
+        grid-area: header;
+        height: 100%;
+        position: relative;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column-reverse;
+        align-items: center;
+        background-color: #ffffff;
+        border: none;
+        position: static;
+    }
+    .header__logo{
+        text-align: center;
+        font-size: 1.4rem;
+        margin: 100px 0px 0px;
+    }
+    .nav__list{
+        flex-direction: column;
+        margin: 90px 0px 0px;
+    }
+    .nav__link{
+        font-size: 2rem;
+    }
+    .nav__item{
+        padding: 5px 0px;
+    }
+    .header__icon--user{
+        display: none;
+    }
+    .visor{
+        height: 400px;
+        width: 100%;
+        background-size: cover;
+        background-position: center;
+        grid-area: visor;
+        margin: 5px 0px;
+    }
+}

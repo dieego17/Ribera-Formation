@@ -1,0 +1,283 @@
+.container{
+    min-width: 400px;
+    max-width: 1440px;
+    margin: 0 auto;
+    width: 100%;
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+                        "header"
+                        "visor"
+                        "contenidos"
+                        "cursos"
+                        "footer";
+}
+.header{
+    grid-area: header;
+    height: 90px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid #444;
+    background-color: #ffffff;
+    z-index: 2;
+}
+.header__logo{
+    text-decoration: none;
+    color: black;
+    display: none;
+    font-size: 1.5rem;
+}
+.header__icon{
+    color: #0eb582;
+    padding: 0px 5px;
+}
+.displayflex{
+    display: block;
+}
+.displaynone{
+    display: none;
+}
+/* formulario */
+
+.header-form{
+    position: absolute;
+    top: 5px;
+    right: 250px;
+    background-color: #ffffff;
+    text-align: center;
+    border: 1px solid #0eb582;
+    border-radius: 5px;
+    width: 400px;
+}
+.show-form {
+    animation-name: formin;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease;
+}
+
+/* Aplicar animación para salida */
+.hide-form {
+    animation-name: formout;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease;
+}
+
+@keyframes formin {
+    from{
+        transform: translateX(100%);
+    }
+    to{
+        transform: translateX(0);
+    }
+}
+@keyframes formout {
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
+.header-form__close{
+    color: #0eb582;
+    font-size: 2rem;
+    padding: 5px 0px;
+    
+}
+.login-form{
+    margin: 10px 10px;
+    border: 1px solid #0eb582;
+    border-radius: 5px;
+}
+.login-form__inputs{
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    
+}
+.login-form__input{
+    margin: 5px 0px;
+    border: 1px solid #0eb582;
+    outline: none;
+    border-radius: 5px;
+    padding: 5px;
+    color: #0eb582;
+}
+.login-form__input::placeholder{
+    color: #0eb582;
+    font-style: italic;
+}
+.login-form__confirm{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #777;
+    font-style: italic;
+}
+form div:nth-child(2){
+    padding: 0px 10px;
+}
+.login-form__btn{
+    margin: 25px 0px 10px;
+    width: 360px;
+    background-color: #f0fdfa;
+    border: none;
+    border: 1px solid #0eb582;
+    border-radius: 5px;
+    color: #0eb582;
+    padding: 5px 0px;
+}
+
+/**/
+.nav__list{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-form__confirm{
+    text-decoration: none;
+}
+.nav__item{
+    padding: 0px 15px;
+    list-style-type: none;
+    font-size: 1.1rem;
+    transition: transform 1s ease;
+}
+.nav__item:hover{
+    transform: scale(1.2);
+}
+
+.nav__link{
+    color: #777;
+    text-decoration: none;
+}
+.nav__link:hover{
+    color: #0eb582;
+    
+}
+.header__icon--user{
+    color: #777;
+    font-size: 1.1rem;
+    transition: transform 1s ease;
+}
+.header__icon--user:hover{
+    transform: scale(1.2);
+    color: #0eb582;
+}
+
+
+/* VISOR ENCIMA DE LA IMAGÉN */
+.visor{
+    background-image: url(../assets/images/home-slide-1.jpg);
+    height: 300px;
+    width: 100%;
+    margin: 90px 0px;
+    background-size: cover;
+    background-position: center;
+    grid-area: visor;
+}
+.visor__content{
+    display: none;
+}
+
+/* CONTENIDOS */
+.subject-container{
+    grid-area: contenidos;
+}
+.container__title{
+    text-align: center;
+    color: #0eb582;
+}
+.subjects{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 0px 10px;
+}
+.subject{
+    padding: 20px 0px;
+    border: 1px solid #0eb582;
+    margin: 15px 10px;
+    text-align: center;
+    background-color: #f0fdfa;
+    box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75);
+    width: 150px;
+    transition: transform 1s ease;
+}
+.subject:hover{
+    transform: scale(1.05);
+}
+.subject__img{
+    width: 90px;
+}
+/* NUESTROS CURSOS */
+.courses{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+.course{
+    width: 380px;
+    position: relative;
+}
+.courses-container{
+    grid-area: cursos;
+}
+.course__image{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f0fdfa;
+    margin: 40px 20px;
+    border-radius: 5px;
+    position: relative;
+}
+
+.slide{
+    background-color: #0eb582;
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    color: #ffffff;
+    margin: 0px 20px 40px;
+    transition: transform  0.5s ease; 
+    transform: translateY(100%);
+    opacity: 0;
+}
+.course:hover .slide{
+    transform: translateY(0);
+    opacity: 1;
+}
+
+
+.slide__text{
+    padding: 0px 10px;
+}
+
+/* FOOTER */
+.footer-container{
+    display: none;
+}
+.footer{
+    background-color: #f0fdfa;
+    grid-area: footer;
+}
+hr{
+    border-color: #0eb582;
+}
+.footer__footer{
+    text-align: end;
+    padding: 0px 20px;
+    color: #0eb582;
+}
